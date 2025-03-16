@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Futuristic Booking</title>
+    <link rel="stylesheet" href="booking.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  </head>
+  <body>
+    <div class="booking-container">
+      <h2 class="booking-title glitch" data-text="Book Now">Book Now</h2>
+      <form class="booking-form">
+        <div class="input-group">
+          <input type="text" id="name" placeholder="Full Name" required />
+          <span class="input-effect"></span>
+        </div>
+
+        <div class="input-group">
+          <input type="email" id="email" placeholder="Email Address" required />
+          <span class="input-effect"></span>
+        </div>
+
+        <div class="input-group">
+          <input type="date" id="date" required />
+          <span class="input-effect"></span>
+        </div>
+
+        <div class="input-group">
+          <input
+            type="number"
+            id="guests"
+            placeholder="Number of Guests"
+            required
+          />
+          <span class="input-effect"></span>
+        </div>
+
+        <div class="input-group">
+          <select id="venue">
+            <option value="" disabled selected>Choose Venue</option>
+            <option value="grandhall">Grand Hall</option>
+            <option value="garden">Garden View</option>
+            <option value="rooftop">Rooftop Lounge</option>
+          </select>
+          <span class="input-effect"></span>
+        </div>
+
+        <button type="submit" class="glowing-btn">
+          <span class="glow-text">Confirm Booking</span>
+        </button>
+      </form>
+    </div>
+
+    <script src="booking.js"></script>
+  </body>
+</html>

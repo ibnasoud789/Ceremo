@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EventVenue</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/your-fontawesome-kit.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">EventVenue</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#venues">Venues</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <button class="btn-login" onclick="window.location.href='login.html'">
+            Login
+          </button>
+        </li>
+      </ul>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Explore The Perfect Venue</h1>
+        <p>Find and book the ideal space for your next big event.</p>
+      </div>
+      <div class="search-box">
+        <form>
+          <label>Venue Type</label>
+          <select>
+            <option>Conference Hall</option>
+            <option>Wedding Venue</option>
+            <option>Outdoor Garden</option>
+            <option>Restaurant</option>
+          </select>
+          <label>City</label>
+          <select>
+            <option>Dhaka</option>
+            <option>Chittagong</option>
+            <option>Sylhet</option>
+            <option>Rajshahi</option>
+          </select>
+          <label>Area</label>
+          <input type="text" placeholder="Enter area" required />
+          <label>Guests</label>
+          <input type="number" placeholder="Enter No. of Guests" required />
+          <label>Date</label>
+          <input type="date" required />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </section>
+    <!-- Venues Section -->
+    <section id="venues" class="venues">
+      <h2>Popular Venues</h2>
+      <div class="venue-cards">
+        <div class="card">
+          <img src="images/community_center.jpeg" alt="Venue 1" />
+          <h3>Community Center A</h3>
+          <p>Capacity: 200 | Price: $500/day</p>
+          <button
+            class="btn-book"
+            onclick="window.location.href='venuedetails.html'"
+          >
+            Details
+          </button>
+        </div>
+        <div class="card">
+          <img src="images/restaurant.jpeg" alt="Venue 2" />
+          <h3>Restaurant B</h3>
+          <p>Capacity: 100 | Price: $300/day</p>
+          <button class="btn-book">Details</button>
+        </div>
+        <div class="card">
+          <img src="images/garden.jpeg" alt="Venue 3" />
+          <h3>Garden C</h3>
+          <p>Capacity: 150 | Price: $400/day</p>
+          <button class="btn-book">Details</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <h2>About Us</h2>
+      <p>
+        We help you find the perfect venue for your dream event. With our
+        easy-to-use platform, you can browse venues, check availability, and
+        book seamlessly.
+      </p>
+      <div class="features-grid">
+        <div
+          class="feature-card"
+          onclick="location.href='real-time-availability.html'"
+        >
+          <i class="fas fa-calendar-check"></i>
+          <h4>Real-Time Availability</h4>
+          <p>Check availability instantly and avoid double bookings.</p>
+        </div>
+        <div
+          class="feature-card"
+          onclick="location.href='affordable-pricing.html'"
+        >
+          <i class="fa-solid fa-bangladeshi-taka-sign"></i>
+          <h4>Affordable Pricing</h4>
+          <p>Find venues that fit your budget without compromising quality.</p>
+        </div>
+        <div
+          class="feature-card"
+          onclick="location.href='wide-range-of-locations.html'"
+        >
+          <i class="fas fa-map-marker-alt"></i>
+          <h4>Wide Range of Locations</h4>
+          <p>Explore venues in community centers, restaurants, and clinics.</p>
+        </div>
+        <div
+          class="feature-card"
+          onclick="location.href='real-time-availability.html'"
+        >
+          <i class="fas fa-calendar-check"></i>
+          <h4>Real-Time Availability</h4>
+          <p>Check availability instantly and avoid double bookings.</p>
+        </div>
+        <div
+          class="feature-card"
+          onclick="location.href='affordable-pricing.html'"
+        >
+          <i class="fa-solid fa-bangladeshi-taka-sign"></i>
+          <h4>Affordable Pricing</h4>
+          <p>Find venues that fit your budget without compromising quality.</p>
+        </div>
+        <div
+          class="feature-card"
+          onclick="location.href='wide-range-of-locations.html'"
+        >
+          <i class="fas fa-map-marker-alt"></i>
+          <h4>Wide Range of Locations</h4>
+          <p>Explore venues in community centers, restaurants, and clinics.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn-submit">Send Message</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2023 EventVenue. All rights reserved.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>

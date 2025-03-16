@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venue Details - The Grand Hall</title>
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- Animate.css for additional animations -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="venuedetail.css" />
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="loader"></div>
+    </div>
+
+    <!-- Header / Navigation (same as home page) -->
+    <header class="navbar">
+      <div class="logo">EventVenue</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#venues">Venues</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <button class="btn-login" onclick="window.location.href='login.html'">
+            Login
+          </button>
+        </li>
+      </ul>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </header>
+
+    <!-- Hero Section with Parallax Effect -->
+    <section class="venue-hero" id="home">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <h1 class="animate__animated animate__fadeInDown">The Grand Hall</h1>
+        <p class="animate__animated animate__fadeInUp">
+          123 Main Street, Downtown
+        </p>
+      </div>
+    </section>
+
+    <!-- Venue Details Section -->
+    <section class="venue-details-section">
+      <div class="venue-info animate__animated animate__fadeInLeft">
+        <div class="info-item">
+          <i class="fas fa-users"></i>
+          <h3>Sitting Capacity</h3>
+          <p>300 Guests</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-money-bill-wave"></i>
+          <h3>Price Packages</h3>
+          <p>Varies by Package</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-clock"></i>
+          <h3>Timings</h3>
+          <p>10 AM - 10 PM</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>Location</h3>
+          <p>Downtown, City Name</p>
+        </div>
+      </div>
+      <div class="venue-description animate__animated animate__fadeInRight">
+        <h2>About The Venue</h2>
+        <p>
+          The Grand Hall is an elegant venue perfect for weddings, corporate
+          events, and special occasions. Blending modern design with classic
+          charm, it offers top-notch facilities and exceptional service. Whether
+          you're planning an intimate gathering or a grand celebration, The
+          Grand Hall sets the stage for unforgettable memories.
+        </p>
+        <button class="btn-book" onclick="window.location.href='booking.html'">
+          Book Now
+        </button>
+      </div>
+    </section>
+
+    <!-- Food Packages Section (Creative Table with Icons & Gradient) -->
+    <!-- Food Packages Section (Single Row Card Layout) -->
+    <section class="venue-packages animate__animated animate__zoomIn">
+      <h2>Food Packages</h2>
+      <div class="package-cards">
+        <!-- Package Card 1 -->
+        <div class="package-card">
+          <div class="ribbon">Popular</div>
+          <h3>Set-1</h3>
+          <p class="original-price">Tk. 900</p>
+          <p class="promotional-price">Tk. 850</p>
+          <ul>
+            <li>Morog Polau (with half chicken)</li>
+            <li>Egg Korma</li>
+            <li>Mixed Vegetable</li>
+            <li>Firni</li>
+            <li>Mineral Water</li>
+          </ul>
+          <button class="btn-book-today">Book Today</button>
+        </div>
+
+        <!-- Package Card 2 -->
+        <div class="package-card">
+          <h3>Set-2</h3>
+          <p class="original-price">Tk. 970</p>
+          <p class="promotional-price">Tk. 900</p>
+          <ul>
+            <li>Plain Rice</li>
+            <li>Rui Fish Fry/Curry</li>
+            <li>Mixed Vegetable</li>
+            <li>Sweet Curd</li>
+            <li>Mineral Water</li>
+          </ul>
+          <button class="btn-book-today">Book Today</button>
+        </div>
+
+        <!-- Package Card 3 -->
+        <div class="package-card">
+          <div class="ribbon">Best Value</div>
+          <h3>Set-3</h3>
+          <p class="original-price">Tk. 1100</p>
+          <p class="promotional-price">Tk. 990</p>
+          <ul>
+            <li>Plain Polau</li>
+            <li>Chicken Roast</li>
+            <li>Mutton Rezala</li>
+            <li>Jali Kebab</li>
+            <li>Mineral Water</li>
+          </ul>
+          <button class="btn-book-today">Book Today</button>
+        </div>
+
+        <!-- Package Card 4 -->
+        <div class="package-card">
+          <h3>Set-4</h3>
+          <p class="original-price">Tk. 1050</p>
+          <p class="promotional-price">Tk. 980</p>
+          <ul>
+            <li>Pasta Primavera</li>
+            <li>Garlic Bread</li>
+            <li>Caesar Salad</li>
+            <li>Iced Tea</li>
+            <li>Mineral Water</li>
+          </ul>
+          <button class="btn-book-today">Book Today</button>
+        </div>
+
+        <!-- Package Card 5 -->
+        <div class="package-card">
+          <h3>Set-5</h3>
+          <p class="original-price">Tk. 1150</p>
+          <p class="promotional-price">Tk. 1000</p>
+          <ul>
+            <li>Vegetarian Special</li>
+            <li>Quinoa Salad</li>
+            <li>Roasted Vegetables</li>
+            <li>Fruit Salad</li>
+            <li>Mineral Water</li>
+          </ul>
+          <button class="btn-book-today">Book Today</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional Features Section -->
+    <!-- Additional Features Section -->
+    <section
+      class="venue-additional-features animate__animated animate__fadeInUp"
+    >
+      <h2>Additional Features</h2>
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-header">
+            <i class="fas fa-snowflake feature-icon"></i>
+            <h3 class="feature-title">Air Conditioning</h3>
+          </div>
+          <div class="feature-details">
+            <p>
+              Modern AC units ensure a comfortable environment for your event.
+            </p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-header">
+            <i class="fas fa-car feature-icon"></i>
+            <h3 class="feature-title">Car Parking</h3>
+          </div>
+          <div class="feature-details">
+            <p>Spacious and secure parking for all your guests.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-header">
+            <i class="fas fa-ruler-combined feature-icon"></i>
+            <h3 class="feature-title">Area Size</h3>
+          </div>
+          <div class="feature-details">
+            <p>Generous space, perfect for both intimate and grand events.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-header">
+            <i class="fas fa-unlock-alt feature-icon"></i>
+            <h3 class="feature-title">Property Type</h3>
+          </div>
+          <div class="feature-details">
+            <p>
+              Flexible options: available as public or private for your needs.
+            </p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-header">
+            <i class="fas fa-wifi feature-icon"></i>
+            <h3 class="feature-title">Wi‑Fi</h3>
+          </div>
+          <div class="feature-details">
+            <p>High-speed internet connectivity throughout the venue.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-header">
+            <i class="fas fa-concierge-bell feature-icon"></i>
+            <h3 class="feature-title">Catering</h3>
+          </div>
+          <div class="feature-details">
+            <p>Customized in-house catering to suit every taste.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-header">
+            <i class="fas fa-video feature-icon"></i>
+            <h3 class="feature-title">A/V Equipment</h3>
+          </div>
+          <div class="feature-details">
+            <p>State‑of‑the‑art audio & visual systems available on request.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-header">
+            <i class="fas fa-shield-alt feature-icon"></i>
+            <h3 class="feature-title">Security</h3>
+          </div>
+          <div class="feature-details">
+            <p>24/7 professional security for a safe event experience.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-header">
+            <i class="fas fa-paint-roller feature-icon"></i>
+            <h3 class="feature-title">Decoration</h3>
+          </div>
+          <div class="feature-details">
+            <p>Expert decoration services to transform your venue.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-header">
+            <i class="fa-solid fa-restroom feature-icon"></i>
+            <h3 class="feature-title">Toilet</h3>
+          </div>
+          <div class="feature-details">
+            <p>
+              Modern AC units ensure a comfortable environment for your event.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="venue-gallery animate__animated animate__fadeInUp">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <img
+          src="images/Raowa-Convention-Hall-1024x576.jpg"
+          alt="Venue Image 1"
+        />
+        <img src="images/marriage.jpg" alt="Venue Image 2" />
+        <img src="images/pexels-abirjoy999-28281725.jpg" alt="Venue Image 3" />
+        <img src="images/sfgfg.jpg" alt="Venue Image 4" />
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="venue-reviews animate__animated animate__fadeInUp">
+      <h2>Customer Reviews</h2>
+      <div class="review">
+        <p>
+          "The Grand Hall exceeded our expectations! The ambiance was perfect
+          for our wedding."
+        </p>
+        <span>- Jane Doe</span>
+      </div>
+      <div class="review">
+        <p>
+          "An excellent venue with top-notch facilities. Highly recommend for
+          corporate events."
+        </p>
+        <span>- John Smith</span>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>&copy; 2025 EventVenue. All rights reserved.</p>
+    </footer>
+
+    <script src="venuedetail.js"></script>
+  </body>
+</html>

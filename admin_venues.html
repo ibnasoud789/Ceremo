@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Venues Management</title>
+    <!-- Animate.css for smooth animations -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- Shared Dashboard CSS -->
+    <link rel="stylesheet" href="dashboard.css" />
+    <!-- Custom CSS for Venues Page -->
+    <link rel="stylesheet" href="admin_venues.css" />
+    <link rel="stylesheet" href="dummy_admin.css" />
+  </head>
+  <body>
+    <!-- Sidebar Navigation (same as dashboard) -->
+    <aside class="sidebar animate__animated animate__fadeInLeft">
+      <div class="sidebar-brand">
+        <h2><i class="fas fa-crown"></i> Admin Panel</h2>
+      </div>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="admin_dashboard.html">
+            <i class="fas fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="admin_venues.html">
+            <i class="fas fa-building"></i>
+            <span>Venues</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin_booking.html">
+            <i class="fas fa-calendar-check"></i>
+            <span>Bookings</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-users"></i>
+            <span>Users</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-chart-line"></i>
+            <span>Reports</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content animate__animated animate__fadeInUp">
+      <!-- Top Navigation -->
+      <header>
+        <div class="user-wrapper">
+          <i class="fas fa-bell"></i>
+          <div class="admin-profile">
+            <img src="images/admin.jpg" alt="Admin" />
+            <div>
+              <h4>Admin Name</h4>
+              <small>Super Admin</small>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- New Section: Venue Search & Reservation History -->
+      <section class="venue-search-section">
+        <h2>Search Venue & View Reservation History</h2>
+        <div class="searchVenue">
+          <input
+            type="text"
+            id="venueSearchInput"
+            placeholder="Enter venue name..."
+          />
+          <button id="venueSearchBtn" class="btn-add">Search Venue</button>
+        </div>
+        <!-- Venue Details & Reservation History (Hidden until search returns a result) -->
+        <div id="venueResult" class="venue-result" style="display: none">
+          <div class="venue-card">
+            <img src="images/venue-hero.jpg" alt="Venue Image" />
+            <div class="venue-info">
+              <h3 id="venueName">The Grand Hall</h3>
+              <p><strong>Location:</strong> Downtown</p>
+              <p><strong>Capacity:</strong> 300 Guests</p>
+              <p><strong>Price:</strong> $1500/day</p>
+              <p>
+                <strong>Features:</strong> Air Conditioning, Car Parking, Wi‑Fi,
+                Decoration, Security, A/V Equipment
+              </p>
+            </div>
+            <button id="editVenueFeaturesBtn" class="btn-edit-venue">
+              Edit Features
+            </button>
+          </div>
+          <div class="reservation-history">
+            <h3>Reservation History</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Booking ID</th>
+                  <th>User</th>
+                  <th>Date</th>
+                  <th>Package</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#1234</td>
+                  <td>John Doe</td>
+                  <td>2025-03-10</td>
+                  <td>Set-1</td>
+                  <td>Confirmed</td>
+                </tr>
+                <tr>
+                  <td>#1235</td>
+                  <td>Jane Smith</td>
+                  <td>2025-03-11</td>
+                  <td>Set-2</td>
+                  <td>Pending</td>
+                </tr>
+                <!-- Additional rows as needed -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <!-- Modal: Edit Venue Features -->
+      <div id="editVenueModal" class="modal">
+        <div class="modal-content animate__animated animate__fadeInDown">
+          <span class="close">&times;</span>
+          <h2>Edit Venue Features</h2>
+          <form
+            id="editVenueForm"
+            action="process_edit_venue.php"
+            method="post"
+          >
+            <!-- Hidden input to pass venue id -->
+            <input type="hidden" name="venueId" value="1" />
+            <div class="form-group">
+              <label>
+                <input type="checkbox" name="features[]" value="AC" checked />
+                Air Conditioning
+              </label>
+            </div>
+            <div class="form-group">
+              <label>
+                <input
+                  type="checkbox"
+                  name="features[]"
+                  value="Parking"
+                  checked
+                />
+                Car Parking
+              </label>
+            </div>
+            <div class="form-group">
+              <label>
+                <input type="checkbox" name="features[]" value="WiFi" checked />
+                Wi‑Fi
+              </label>
+            </div>
+            <div class="form-group">
+              <label>
+                <input type="checkbox" name="features[]" value="Decoration" />
+                Decoration
+              </label>
+            </div>
+            <div class="form-group">
+              <label>
+                <input
+                  type="checkbox"
+                  name="features[]"
+                  value="AV Equipment"
+                  checked
+                />
+                A/V Equipment
+              </label>
+            </div>
+            <div class="form-group">
+              <label>
+                <input
+                  type="checkbox"
+                  name="features[]"
+                  value="Security"
+                  checked
+                />
+                Security
+              </label>
+            </div>
+            <!-- Additional feature(s) if needed -->
+            <button type="submit" class="btn-submit">Save Changes</button>
+          </form>
+        </div>
+      </div>
+
+      <h2 class="page-title">Venues Management</h2>
+      <button
+        id="addVenueBtn"
+        class="btn-add animate__animated animate__fadeIn"
+      >
+        Add Venue
+      </button>
+
+      <!-- Add Venue Form (Hidden by default) -->
+      <div
+        id="addVenueForm"
+        class="form-container animate__animated animate__fadeIn"
+        style="display: none"
+      >
+        <h3>Add New Venue</h3>
+        <form
+          action="process_venue.php"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div class="form-group">
+            <label for="venueName">Venue Name</label>
+            <input type="text" id="venueName" name="venueName" required />
+          </div>
+          <div class="form-group">
+            <label for="venueLocation">Location</label>
+            <input
+              type="text"
+              id="venueLocation"
+              name="venueLocation"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="venueCapacity">Capacity</label>
+            <input
+              type="number"
+              id="venueCapacity"
+              name="venueCapacity"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="venuePrice">Price (per day)</label>
+            <input type="number" id="venuePrice" name="venuePrice" required />
+          </div>
+          <div class="form-group">
+            <label for="venueDescription">Description</label>
+            <textarea
+              id="venueDescription"
+              name="venueDescription"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="venueImage">Upload Image</label>
+            <input
+              type="file"
+              id="venueImage"
+              name="venueImage"
+              accept="image/*"
+              required
+            />
+          </div>
+          <!-- Optional checkboxes for features -->
+          <div class="form-group features-checkbox">
+            <label>Features:</label>
+            <label
+              ><input type="checkbox" name="features[]" value="AC" /> Air
+              Conditioning</label
+            >
+            <label
+              ><input type="checkbox" name="features[]" value="Parking" /> Car
+              Parking</label
+            >
+            <label
+              ><input type="checkbox" name="features[]" value="WiFi" />
+              Wi‑Fi</label
+            >
+            <label
+              ><input type="checkbox" name="features[]" value="Decoration" />
+              Decoration</label
+            >
+          </div>
+          <button type="submit" class="btn-submit">Add Venue</button>
+        </form>
+      </div>
+
+      <!-- Venues List Table -->
+      <section class="venues-table-section animate__animated animate__fadeInUp">
+        <h3>Existing Venues</h3>
+        <table class="venues-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Location</th>
+              <th>Capacity</th>
+              <th>Price</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Sample data rows; replace with dynamic content -->
+            <tr>
+              <td>1</td>
+              <td>The Grand Hall</td>
+              <td>Downtown</td>
+              <td>300</td>
+              <td>$1500</td>
+              <td>
+                <button class="btn-edit"><i class="fas fa-edit"></i></button>
+                <button class="btn-delete"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Lake View</td>
+              <td>Seaside</td>
+              <td>200</td>
+              <td>$1200</td>
+              <td>
+                <button class="btn-edit"><i class="fas fa-edit"></i></button>
+                <button class="btn-delete"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+            <!-- More rows as needed -->
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <!-- JavaScript for toggling form -->
+    <script>
+      const addVenueBtn = document.getElementById("addVenueBtn");
+      const addVenueForm = document.getElementById("addVenueForm");
+
+      addVenueBtn.addEventListener("click", () => {
+        // Toggle the visibility of the form
+        if (addVenueForm.style.display === "none") {
+          addVenueForm.style.display = "block";
+          addVenueBtn.textContent = "Close Form";
+        } else {
+          addVenueForm.style.display = "none";
+          addVenueBtn.textContent = "Add Venue";
+        }
+      });
+      // Venue Search Simulation (replace with AJAX in production)
+      const venueSearchBtn = document.getElementById("venueSearchBtn");
+      const venueResult = document.getElementById("venueResult");
+      venueSearchBtn.addEventListener("click", () => {
+        // Simulate a search result (in production, fetch from backend)
+        venueResult.style.display = "block";
+      });
+
+      // Modal Script for Editing Venue Features
+      const editVenueModal = document.getElementById("editVenueModal");
+      const editVenueBtn = document.getElementById("editVenueFeaturesBtn");
+      const closeModalSpan = editVenueModal.querySelector(".close");
+
+      // Open modal when Edit Features button is clicked
+      editVenueBtn &&
+        editVenueBtn.addEventListener("click", () => {
+          editVenueModal.style.display = "block";
+        });
+
+      // Close modal when close icon is clicked
+      closeModalSpan.addEventListener("click", () => {
+        editVenueModal.style.display = "none";
+      });
+
+      // Close modal when clicking outside modal content
+      window.addEventListener("click", (e) => {
+        if (e.target === editVenueModal) {
+          editVenueModal.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
